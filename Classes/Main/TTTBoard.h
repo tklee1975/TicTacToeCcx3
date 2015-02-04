@@ -10,6 +10,7 @@
 #define __TicTacToe__TTTBoard__
 
 #include <stdio.h>
+#include <string.h>
 #include "cocos2d.h"
 #include "TTTType.h"
 
@@ -75,6 +76,7 @@ private:
 	int mGrid;			// number of grid
 	float mGridSize;	// length of the grid
 	bool mEnable;
+	bool mIsTouching;
 	TTTBoardCallback mGameEndListener;
 	
 	int mCurrentPlayer;		// 0 - Unknown 1 - Player1  2 - Player2
@@ -82,6 +84,7 @@ private:
 	State mState;
 	TTTBoardLogic *mLogic;
 	
+	Vec2 mChessPos;			// last valid position
 	TTTChess *mPlacingChess;
 	TTTChess *mChessArray[kNumGrid][kNumGrid];
 };

@@ -140,7 +140,7 @@ void TDDHelper::addTestButton(Node *parent, Point pos)
 												TDDHelper::showTests();
 											}
 							);
-	
+	menu->setColor(Color3B::BLUE);
 	parent->addChild(menu);
 }
 

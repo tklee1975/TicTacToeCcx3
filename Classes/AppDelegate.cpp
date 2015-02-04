@@ -21,7 +21,9 @@ void setupResolutionPolicy(float designW, float designH)
 	float screenRatio = screenSize.height / screenSize.width;
 	
 	ResolutionPolicy resolutionPolicy = screenRatio < designRatio ?
-	ResolutionPolicy::FIXED_HEIGHT : ResolutionPolicy::FIXED_WIDTH;
+			ResolutionPolicy::FIXED_HEIGHT : ResolutionPolicy::FIXED_WIDTH;
+	
+	//ResolutionPolicy resolutionPolicy = ResolutionPolicy::EXACT_FIT;
 	
 	view->setDesignResolutionSize(designW, designH, resolutionPolicy);
 }

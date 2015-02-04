@@ -68,7 +68,7 @@ bool TTTUILayer::init()
 	
 	// Setting for Testing / Release Version
 #ifdef ENABLE_TDD
-		Point pos = Point(300, 50);
+		Point pos = Point(270, 50);
 		TDDHelper::addTestButton(this, pos);
 		
 		Director::getInstance()->setDisplayStats(true);
@@ -216,6 +216,7 @@ void TTTUILayer::changeToEnd(TTTBoard::State state)
 	// Make the player button available again
 	mPlayerButton->setVisible(true);
 	mPlayerButton->setEnabled(true);
+	mPlayerButton->setTitleText("Play Again");
 	
 	//	setStatus("Game Started");
 }

@@ -35,6 +35,7 @@ bool TTTBoard::initWithSize(const float size)
 		return false;
 	}
 	
+	mIsTouching = false;
 	mGrid = kNumGrid;
 	mGridSize = getContentSize().width / mGrid;
 	
@@ -152,6 +153,7 @@ TTTChess *TTTBoard::addChess(const Vec2 &position)
 	chess->setPosition(nodePos);
 	
 	addChild(chess);
+	mChessPos = position;
 	
 	return chess;
 }
@@ -161,10 +163,12 @@ void TTTBoard::moveChess(TTTChess *chess, const Vec2 &position)
 	if(chess == NULL) {
 		return;
 	}
-	
+
 	Vec2 nodePos = getNodePosition(position);
 	
 	chess->setPosition(nodePos);
+	
+	mChessPos = position;
 }
 
 bool TTTBoard::isValidPos(const Vec2 &position)
@@ -208,6 +212,11 @@ bool TTTBoard::onTouchBegan(Touch *touch, Event *event)
 	if(mEnable == false) {
 		return false;
 	}
+	if(mIsTouching) {
+		return false;
+	}
+	
+	
 	
 	CCLOG("TTTBoard::onTouchBegan id = %d, x = %f, y = %f", touch->getID(),
 		  touch->getLocation().x, touch->getLocation().y);
@@ -224,6 +233,8 @@ bool TTTBoard::onTouchBegan(Touch *touch, Event *event)
 	
 	TTTChess *chess = addChess(gridPosition);
 	mPlacingChess = chess;
+	
+	mIsTouching = true;
 	
 	return true;
 }
@@ -254,11 +265,11 @@ void TTTBoard::changePlayer()
 
 void TTTBoard::onTouchEnded(Touch *touch, Event *event)
 {
-	Vec2 localPoint = convertToNodeSpace(touch->getLocation());
-	Vec2 gridPosition = getGridPosition(localPoint);
+//	Vec2 localPoint = convertToNodeSpace(touch->getLocation());
+//	Vec2 gridPosition = getGridPosition(localPoint);
 	
-	int x = gridPosition.x;
-	int y = gridPosition.y;
+	int x = mChessPos.x;
+	int y = mChessPos.y;
 	
 	// Placing the new move
 	mChessArray[x][y] = mPlacingChess;
@@ -269,7 +280,8 @@ void TTTBoard::onTouchEnded(Touch *touch, Event *event)
 	
 	// Checking the result
 	handleMoveEnd();
-	
+
+	mIsTouching = false;
 }
 
 void TTTBoard::handleMoveEnd()

@@ -10,6 +10,7 @@
 #define __TicTacToe__TTTBoardLogic__
 
 #include <stdio.h>
+#include <string>
 #include "TTTType.h"
 
 class TTTBoardLogic
