@@ -80,6 +80,10 @@
 		7382DF6E1A6989EF00BD2A8C /* TTTUILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7382DF6B1A6989EF00BD2A8C /* TTTUILayer.cpp */; };
 		7382DF711A698A0200BD2A8C /* TTTUILayerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7382DF701A698A0200BD2A8C /* TTTUILayerTest.cpp */; };
 		7382DF721A698A0200BD2A8C /* TTTUILayerTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7382DF701A698A0200BD2A8C /* TTTUILayerTest.cpp */; };
+		73888CBF1A8A81D700E92606 /* SoundTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73888CBD1A8A81D700E92606 /* SoundTest.cpp */; };
+		73888CC01A8A81D700E92606 /* SoundTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73888CBD1A8A81D700E92606 /* SoundTest.cpp */; };
+		73888CC21A8A81F000E92606 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 73888CC11A8A81F000E92606 /* sound */; };
+		73888CC31A8A81F000E92606 /* sound in Resources */ = {isa = PBXBuildFile; fileRef = 73888CC11A8A81F000E92606 /* sound */; };
 		73C94F671A5EF8210068DB06 /* SampleTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73C94F4D1A5EF8210068DB06 /* SampleTest.cpp */; };
 		73C94F681A5EF8210068DB06 /* TDDData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73C94F511A5EF8210068DB06 /* TDDData.cpp */; };
 		73C94F691A5EF8210068DB06 /* TDDHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73C94F531A5EF8210068DB06 /* TDDHelper.cpp */; };
@@ -206,6 +210,9 @@
 		7382DF6C1A6989EF00BD2A8C /* TTTUILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTUILayer.h; path = Main/TTTUILayer.h; sourceTree = "<group>"; };
 		7382DF6F1A698A0200BD2A8C /* TTTUILayerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTUILayerTest.h; sourceTree = "<group>"; };
 		7382DF701A698A0200BD2A8C /* TTTUILayerTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TTTUILayerTest.cpp; sourceTree = "<group>"; };
+		73888CBD1A8A81D700E92606 /* SoundTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SoundTest.cpp; sourceTree = "<group>"; };
+		73888CBE1A8A81D700E92606 /* SoundTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundTest.h; sourceTree = "<group>"; };
+		73888CC11A8A81F000E92606 /* sound */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sound; sourceTree = "<group>"; };
 		73C94F4D1A5EF8210068DB06 /* SampleTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SampleTest.cpp; sourceTree = "<group>"; };
 		73C94F4E1A5EF8210068DB06 /* SampleTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleTest.h; sourceTree = "<group>"; };
 		73C94F4F1A5EF8210068DB06 /* TDDCases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDDCases.h; sourceTree = "<group>"; };
@@ -357,6 +364,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				73888CC11A8A81F000E92606 /* sound */,
 				7372ABC01A68A9920026C875 /* gui */,
 				7356BCD01A61948A00D6D5C3 /* image */,
 				521A8EA819F11F5000D177D7 /* fonts */,
@@ -489,6 +497,8 @@
 		73C94F611A5EF8210068DB06 /* UnitTest */ = {
 			isa = PBXGroup;
 			children = (
+				73888CBD1A8A81D700E92606 /* SoundTest.cpp */,
+				73888CBE1A8A81D700E92606 /* SoundTest.h */,
 				73E4E3951A6DF2B700B8ABFB /* TTTBoardLogicTest.h */,
 				73E4E3961A6DF2B700B8ABFB /* TTTBoardLogicTest.cpp */,
 				7382DF6F1A698A0200BD2A8C /* TTTUILayerTest.h */,
@@ -618,6 +628,7 @@
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
+				73888CC21A8A81F000E92606 /* sound in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
@@ -648,6 +659,7 @@
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				73888CC31A8A81F000E92606 /* sound in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +697,7 @@
 				73C94F6A1A5EF8210068DB06 /* TDDMenu.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				7372ABBE1A68A7360026C875 /* CocosStudioTest.cpp in Sources */,
+				73888CBF1A8A81D700E92606 /* SoundTest.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +716,7 @@
 				7382DF6E1A6989EF00BD2A8C /* TTTUILayer.cpp in Sources */,
 				73E4E3941A6DF29000B8ABFB /* TTTBoardLogic.cpp in Sources */,
 				7382DF721A698A0200BD2A8C /* TTTUILayerTest.cpp in Sources */,
+				73888CC01A8A81D700E92606 /* SoundTest.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				7356BCE21A619A9000D6D5C3 /* TTTChess.cpp in Sources */,

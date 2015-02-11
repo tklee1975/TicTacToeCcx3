@@ -17,6 +17,7 @@
 #include "CocosStudioTest.h"
 #include "TTTUILayerTest.h"
 #include "TTTBoardLogicTest.h"
+#include "SoundTest.h"
 
 //#include#
 // NOTE!!! The above line is used to generate new unit test, must not be removed.
@@ -25,6 +26,7 @@
 TDD_CASES
 {
 	TEST(CocosStudioTest),
+	TEST(SoundTest),
 	TEST(TTTBoardLogicTest),
 	TEST(TTTUILayerTest),
 	TEST(TouchTest),

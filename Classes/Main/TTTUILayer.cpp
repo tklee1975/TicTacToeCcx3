@@ -13,6 +13,12 @@
 #include "TTTBoard.h"
 #include "TDDHelper.h"
 
+#include "audio/include/SimpleAudioEngine.h"
+using namespace CocosDenshion;
+
+#define kSoundWin		"sound/win.mp3"
+#define kSoundDraw		"sound/draw.mp3"
+
 using namespace cocos2d;
 using namespace cocostudio::timeline;
 
@@ -61,6 +67,9 @@ bool TTTUILayer::init()
 	setupBoard(boardNode);
 	
 	
+	// Setup Sound
+	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(kSoundWin);
+	SimpleAudioEngine::getInstance()->preloadBackgroundMusic(kSoundDraw);
 	
 	// Start the game
 	changeToStart();
@@ -136,6 +145,7 @@ void TTTUILayer::setStatus(const std::string &label)
 void TTTUILayer::handlePlayClicked()
 {
 	log("play is clicked");
+	SimpleAudioEngine::getInstance()->stopBackgroundMusic();
 	changeToGame();
 }
 
@@ -193,18 +203,21 @@ void TTTUILayer::changeToEnd(TTTBoard::State state)
 		case TTTBoard::State::DrawGame:
 		{
 			setStatus("Draw Game!!!");
+			SimpleAudioEngine::getInstance()->playBackgroundMusic(kSoundDraw);
 			break;
 		}
 			
 		case TTTBoard::State::Player1Win:
 		{
 			setStatus("Player 1 WIN!");
+			SimpleAudioEngine::getInstance()->playBackgroundMusic(kSoundWin);
 			break;
 		}
 			
 		case TTTBoard::State::Player2Win:
 		{
 			setStatus("Player 2 WIN!");
+			SimpleAudioEngine::getInstance()->playBackgroundMusic(kSoundWin);
 			break;
 		}
 			

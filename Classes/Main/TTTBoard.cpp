@@ -11,6 +11,13 @@
 #include "TTTChess.h"
 #include "TTTBoardLogic.h"
 
+
+#include "audio/include/SimpleAudioEngine.h"
+using namespace CocosDenshion;
+
+#define kSoundClick		"sound/move.mp3"
+
+
 TTTBoard *TTTBoard::createWithSize(const float size)
 {
 	TTTBoard *board = new TTTBoard();
@@ -45,6 +52,9 @@ bool TTTBoard::initWithSize(const float size)
 	mLogic = new TTTBoardLogic();
 	mPlacingChess = NULL;
 	
+	
+	SimpleAudioEngine::getInstance()->preloadEffect(kSoundClick);
+
 	return true;
 }
 
@@ -277,9 +287,12 @@ void TTTBoard::onTouchEnded(Touch *touch, Event *event)
 	// Playing the chess
 	mLogic->placeChess(mCurrentPlayer, x, y);
 	
+	SimpleAudioEngine::getInstance()->playEffect(kSoundClick);
 	
 	// Checking the result
 	handleMoveEnd();
+	
+	
 
 	mIsTouching = false;
 }

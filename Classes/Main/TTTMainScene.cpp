@@ -37,6 +37,8 @@ bool TTTMainScene::init()
 		return flag;
 	}
 	
+	// Setup sound
+	
 	// Add the gameLayer
 	TTTUILayer *layer = TTTUILayer::create();
 	addChild(layer);
